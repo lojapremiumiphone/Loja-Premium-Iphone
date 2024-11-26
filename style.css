@@ -792,108 +792,130 @@ h2 {
     color: #fff; /* Texto branco no hover */
 }
 
-/* Ajuste de layout para telas pequenas */
-@media (max-width: 768px) {
-    .intro-section {
-      padding: 20px; /* Reduz o espaçamento interno */
-      text-align: center; /* Centraliza os textos */
-    }
-  
-    .intro-section h1 {
-      font-size: 1.8rem; /* Reduz o tamanho da fonte do título */
-    }
-  
-    .intro-section p {
-      font-size: 1rem; /* Ajusta o tamanho da fonte do parágrafo */
-    }
-  
-    .benefit-cards {
-      display: flex;
-      flex-direction: column; /* Coloca os cards em coluna */
-      align-items: center; /* Centraliza os cards */
-      gap: 20px; /* Adiciona espaçamento entre os cards */
-    }
-  
-    .benefit-card {
-      width: 100%; /* Garante que os cards ocupem toda a largura */
-      max-width: 300px; /* Limita a largura máxima */
-      text-align: center; /* Centraliza o texto */
-    }
-  
-    .cta-button {
-      font-size: 1rem; /* Reduz o tamanho da fonte do botão */
-      padding: 15px 20px; /* Ajusta o espaçamento interno */
-    }
-  }
-/* Ajuste para a seção "Preços Que Você Nunca Viu Antes!" */
+/* Ajuste da seção "Preços Que Você Nunca Viu Antes!" */
 .intro-section {
-    padding: 20px; /* Adiciona espaçamento em volta da seção */
-    text-align: center; /* Centraliza todo o conteúdo */
-    box-sizing: border-box; /* Garante que os espaçamentos sejam incluídos no tamanho total */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 100%; /* Garante que ocupe toda a largura no celular */
+    box-sizing: border-box;
 }
 
 .intro-section h1 {
-    font-size: 2rem; /* Ajusta o tamanho do título */
-    margin-bottom: 15px; /* Adiciona um espaço abaixo do título */
+    font-size: 2rem; /* Ajuste para o título */
+    margin-bottom: 15px;
+    color: #fff;
 }
 
 .intro-section p {
-    font-size: 1.2rem; /* Ajusta o tamanho do texto */
-    margin-bottom: 20px; /* Adiciona espaço abaixo do parágrafo */
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #f8f9fa;
 }
 
+/* Cartões de benefícios */
 .benefit-cards {
     display: flex;
-    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
-    justify-content: center; /* Centraliza os cards */
-    gap: 15px; /* Espaçamento entre os cards */
-    padding: 0 10px; /* Adiciona espaçamento nas laterais */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%; /* Alinha os cartões na largura total */
 }
 
 .benefit-card {
-    width: 100%; /* Largura total em telas pequenas */
-    max-width: 300px; /* Define uma largura máxima */
-    text-align: center; /* Centraliza o texto no card */
-    padding: 15px; /* Adiciona espaçamento interno */
-    border: 1px solid #ccc; /* Adiciona uma borda leve */
-    border-radius: 8px; /* Arredonda os cantos */
-    background-color: #fff; /* Fundo branco */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+    width: 100%; /* Cartões ocupam toda a largura no celular */
+    max-width: 300px; /* Limita a largura máxima */
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Botão CTA */
+/* Botão de CTA */
 .cta-button {
-    font-size: 1.2rem; /* Tamanho da fonte do botão */
-    padding: 15px 20px; /* Espaçamento interno */
-    margin-top: 20px; /* Espaçamento superior */
-    display: inline-block; /* Garante que o botão seja exibido corretamente */
-    background-color: #fdd835; /* Cor de fundo */
-    color: #000; /* Cor do texto */
-    text-transform: uppercase; /* Texto em maiúsculo */
-    font-weight: bold; /* Texto em negrito */
-    border: none; /* Remove borda */
-    border-radius: 8px; /* Arredonda os cantos */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
-    cursor: pointer; /* Muda o cursor para "mãozinha" */
+    font-size: 1rem;
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #fdd835;
+    color: #000;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #ffc107; /* Cor ao passar o mouse */
+    background-color: #ffc107;
 }
 
-/* Estilo responsivo para telas pequenas */
+/* Ajuste para telas menores que 768px */
 @media (max-width: 768px) {
     .intro-section h1 {
-        font-size: 1.5rem; /* Reduz o tamanho do título */
+        font-size: 1.5rem;
     }
 
     .intro-section p {
-        font-size: 1rem; /* Reduz o tamanho do texto */
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .benefit-cards {
+        flex-direction: column; /* Organiza os cartões na vertical */
+        align-items: center;
+        gap: 15px;
     }
 
     .benefit-card {
-        width: 90%; /* Cards ocupam quase toda a largura da tela */
-        margin: 0 auto; /* Centraliza os cards */
+        width: 90%; /* Ocupa quase toda a largura */
+        max-width: 320px;
+    }
+
+    .cta-button {
+        width: 90%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
-  
+
+
+@media (max-width: 528px) {
+    .features {
+        flex-direction: column; /* Alinha os cards verticalmente */
+        gap: 15px; /* Reduz o espaço entre os cards */
+        margin: 10px 0; /* Ajusta as margens */
+    }
+
+    .feature {
+        max-width: 100%; /* Garante que ocupe toda a largura */
+        padding: 10px; /* Reduz o espaçamento interno */
+    }
+
+    header.hero {
+        padding: 30px 15px; /* Reduz o padding do cabeçalho */
+    }
+
+    header.hero h1 {
+        font-size: 1.8rem; /* Ajusta o tamanho do título */
+        margin-bottom: 10px; /* Reduz o espaço inferior */
+    }
+
+    .hero .hero-subtitle {
+        font-size: 1rem; /* Ajusta o texto da descrição */
+        line-height: 1.4; /* Melhora o espaçamento entre linhas */
+        margin-bottom: 20px;
+    }
+
+    .hero .btn {
+        font-size: 1rem;
+        padding: 10px 20px; /* Reduz o tamanho do botão */
+    }
+}
+
+
