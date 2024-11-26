@@ -918,4 +918,36 @@ h2 {
     }
 }
 
+body {
+    margin: 0 auto; /* Centraliza o conteúdo */
+    max-width: 100%; /* Garante que o conteúdo não ultrapasse a largura da tela */
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebra de linha para os cards */
+    justify-content: center; /* Centraliza os elementos */
+    gap: 20px; /* Espaçamento entre os cards */
+    padding: 0 10px; /* Espaço interno para evitar cortes */
+}
+
+.feature {
+    flex: 1 1 calc(33.33% - 20px); /* Garante que os cards fiquem proporcionais */
+    max-width: 300px; /* Limita a largura máxima */
+    text-align: center; /* Centraliza o texto */
+}
+
+
+.hero .btn {
+    display: inline-block;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    background-color: #ffd700;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 50px;
+    margin: 20px auto;
+}
+
 
