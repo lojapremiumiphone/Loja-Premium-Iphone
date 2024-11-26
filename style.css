@@ -545,3 +545,53 @@ footer a:hover {
     color: #0056b3; /* Cor ao passar o mouse */
 }
 
+@media (max-width: 768px) {
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .depoimentos-slider img {
+        width: 60px;
+        height: 60px;
+    }
+    .depoimentos-slider p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .produto {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+        padding: 20px;
+    }
+}
