@@ -595,3 +595,86 @@ footer a:hover {
         padding: 20px;
     }
 }
+
+/* Ajuste da seção de destaque */
+h2 {
+    font-size: 2rem; /* Ajuste o tamanho da fonte do título */
+    text-align: center;
+    margin-bottom: 10px; /* Espaço menor abaixo do título */
+}
+
+.secao-destaque {
+    padding: 20px 10px; /* Adiciona mais espaço interno para celulares */
+    text-align: center;
+}
+
+.secao-destaque p {
+    font-size: 1rem; /* Ajuste o tamanho do texto */
+    line-height: 1.5; /* Melhor espaçamento entre linhas */
+    margin: 10px 0;
+}
+
+.botao-destaque {
+    font-size: 1rem; /* Ajuste do tamanho do botão */
+    padding: 10px 20px; /* Melhor dimensão do botão */
+    margin-top: 15px;
+    display: block;
+    width: 100%; /* Para ocupar toda a largura no celular */
+    max-width: 300px; /* Limitar o tamanho máximo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ajuste para os cartões de informação */
+.cartoes-info {
+    display: flex;
+    flex-direction: column; /* Empilha os cartões no celular */
+    align-items: center;
+    gap: 10px; /* Espaço entre os cartões */
+}
+
+.cartao {
+    max-width: 300px; /* Limita a largura máxima de cada cartão */
+    padding: 15px;
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 8px; /* Arredonda os cantos */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+    text-align: center;
+    margin: 0 auto;
+}
+
+.cartao img {
+    width: 50px; /* Ajuste do ícone */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.cartao h3 {
+    font-size: 1.2rem; /* Tamanho do texto do cartão */
+    margin-bottom: 10px;
+}
+
+.cartao p {
+    font-size: 0.9rem; /* Ajuste do texto no cartão */
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem; /* Título menor em telas pequenas */
+    }
+
+    .cartoes-info {
+        flex-direction: column; /* Cartões empilhados no celular */
+        gap: 15px;
+    }
+
+    .cartao {
+        width: 90%; /* Ocupa quase toda a largura no celular */
+    }
+
+    .botao-destaque {
+        font-size: 1rem; /* Ajusta o botão no celular */
+        padding: 12px 15px;
+    }
+}
