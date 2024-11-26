@@ -678,3 +678,61 @@ h2 {
         padding: 12px 15px;
     }
 }
+
+/* Ajuste da seção de destaque */
+.destaque {
+    text-align: center; /* Centraliza todo o conteúdo */
+    padding: 20px; /* Adiciona espaço interno */
+    margin: 0 auto; /* Centraliza a seção horizontalmente */
+    max-width: 90%; /* Garante que o conteúdo não ultrapasse 90% da largura */
+    box-sizing: border-box; /* Inclui padding e border dentro da largura */
+}
+
+/* Ajuste para o texto */
+.destaque h2 {
+    font-size: 2rem; /* Ajusta o tamanho do texto */
+    color: #fff; /* Mantém o texto branco */
+    margin-bottom: 10px; /* Espaço inferior */
+}
+
+/* Ajuste para os ícones e textos */
+.destaque-itens {
+    display: flex;
+    flex-wrap: wrap; /* Garante que os itens fiquem organizados no celular */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+/* Cada item individual */
+.destaque-item {
+    flex: 1 1 250px; /* Cada item ocupa no mínimo 250px */
+    max-width: 300px; /* Limita a largura máxima dos itens */
+    text-align: center; /* Centraliza o texto dentro do item */
+    background-color: #fff; /* Fundo branco */
+    padding: 10px;
+    border-radius: 10px; /* Arredonda os cantos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Botão centralizado */
+.destaque-botao {
+    margin-top: 20px; /* Espaçamento superior */
+    display: flex;
+    justify-content: center;
+}
+
+.destaque-botao a {
+    background-color: #f1c40f; /* Cor de fundo do botão */
+    color: #000; /* Cor do texto */
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.destaque-botao a:hover {
+    background-color: #d4ac0d; /* Cor mais escura no hover */
+    color: #fff; /* Texto branco ao passar o mouse */
+}
