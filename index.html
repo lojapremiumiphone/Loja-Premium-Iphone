@@ -142,12 +142,12 @@
             <div class="produto">
                 <!-- Badge -->
                 <span class="badge badge-vendido">Mais Vendido</span>
-    
+            
                 <img src="imagens/iphone-12-preto.jpg" alt="iPhone 12" id="imagem-iphone-12">
                 <h3>iPhone 12 Pro</h3>
                 <p>LACRADO</p>
                 <p class="preco" id="preco-iphone-12">R$ 1.400,99</p>
-    
+            
                 <!-- Opções de Cor -->
                 <label for="cor-iphone-12">Cor:</label>
                 <select id="cor-iphone-12" name="cor" onchange="atualizarImagem('iphone-12')">
@@ -156,46 +156,66 @@
                     <option value="dourado">Dourado</option>
                     <option value="azul-pacifico">Azul Pacífico</option>
                 </select>
-    
+            
                 <!-- Opções de Gigas -->
                 <label for="gigas-iphone-12">Armazenamento:</label>
-                <select id="gigas-iphone-12" name="gigas" onchange="atualizarPreco('iphone-12')">
+                <select id="gigas-iphone-12" name="gigas" onchange="atualizarPreco('iphone-12'); atualizarLinkCheckout('iphone-12')">
                     <option value="128gb">128GB</option>
                     <option value="256gb">256GB</option>
                 </select>
-    
-                <a href="LINK_DO_CHECKOUT" class="btn btn-secondary">Comprar Agora</a>
+            
+                <!-- Botão Comprar Agora -->
+                <a href="https://go.perfectpay.com.br/PPU38CP9JKC" class="btn btn-secondary" id="link-checkout-iphone-12">Comprar Agora</a>
+
             </div>
+            
     
             <!-- Produto 2: iPhone 13 Pro -->
             <div class="produto">
                 <!-- Badge -->
-                <span class="badge badge-promocao">Promoção</span>
-    
-                <img src="imagens/iphone-13-Verde-alpino.jpg" alt="iPhone 13" id="imagem-iphone-13">
-                <h3>iPhone 13 Pro</h3>
-                <p>LACRADO</p>
-                <p class="preco" id="preco-iphone-13">R$ 1.734,99</p>
-    
-                <!-- Opções de Cor -->
-                <label for="cor-iphone-13">Cor:</label>
-                <select id="cor-iphone-13" name="cor" onchange="atualizarImagem('iphone-13')">
-                    <option value="verde-alpino">Verde Alpino</option>
-                    <option value="prata">Prata</option>
-                    <option value="azul-sierra">Azul Sierra</option>
-                </select>
-    
-                <!-- Opções de Gigas -->
-                <label for="gigas-iphone-13">Armazenamento:</label>
-                <select id="gigas-iphone-13" name="gigas" onchange="atualizarPreco('iphone-13')">
-                    <option value="128gb">128GB</option>
-                    <option value="256gb">256GB</option>
-                    <option value="512gb">512GB</option>
-                </select>
-    
-                <a href="LINK_DO_CHECKOUT" class="btn btn-secondary">Comprar Agora</a>
+                <div class="badge-container">
+                    <span class="badge badge-promocao">Promoção</span>
+                </div>
+            
+                <!-- Imagem do Produto -->
+                <div class="imagem-container">
+                    <img src="imagens/iphone-13-Verde-alpino.jpg" alt="iPhone 13" id="imagem-iphone-13">
+                </div>
+            
+                <!-- Detalhes do Produto -->
+                <div class="detalhes-container">
+                    <h3>iPhone 13 Pro</h3>
+                    <p>LACRADO</p>
+                    <p class="preco" id="preco-iphone-13">R$ 1.734,99</p>
+            
+                    <!-- Opções de Cor -->
+                    <div class="opcoes">
+                        <label for="cor-iphone-13">Cor:</label>
+                        <select id="cor-iphone-13" name="cor" onchange="atualizarImagem('iphone-13')">
+                            <option value="verde-alpino">Verde Alpino</option>
+                            <option value="prata">Prata</option>
+                            <option value="azul-sierra">Azul Sierra</option>
+                        </select>
+                    </div>
+            
+                    <!-- Opções de Gigas -->
+                    <div class="opcoes">
+                        <label for="gigas-iphone-13">Armazenamento:</label>
+                        <select id="gigas-iphone-13" name="gigas" onchange="atualizarPreco('iphone-13')">
+                            <option value="128gb">128GB</option>
+                            <option value="256gb">256GB</option>
+                            <option value="512gb">512GB</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <!-- Botão de Compra -->
+                <div class="botao-container">
+                    <a href="https://go.perfectpay.com.br/PPU38CP9JOD" class="btn btn-secondary" id="link-checkout-iphone-13">Comprar Agora</a>
+
+                </div>
             </div>
-    
+            
             <!-- Produto 3: iPhone 14 Pro Max -->
             <div class="produto">
                 <!-- Badge -->
@@ -421,6 +441,38 @@ document.querySelector('.prev').addEventListener('click', prevDepoimento);
             }
         });
     });
+
+ // Links de checkout para cada modelo e armazenamento
+const checkoutLinks = {
+    "iphone-12": {
+        "128gb": "https://go.perfectpay.com.br/PPU38CP9JKC",
+        "256gb": "https://go.perfectpay.com.br/PPU38CP9JJ2"
+    },
+    "iphone-13": {
+        "128gb": "https://go.perfectpay.com.br/PPU38CP9JOD",
+        "256gb": "https://go.perfectpay.com.br/PPU38CP9JOM",
+        "512gb": "https://go.perfectpay.com.br/PPU38CP9JRG"
+    }
+};
+
+// Função para atualizar o link de checkout com base na seleção de gigas
+function atualizarCheckout(modelo) {
+    const selectGigas = document.getElementById(`gigas-${modelo}`);
+    const checkoutLink = document.getElementById(`link-checkout-${modelo}`);
+    const gigasSelecionado = selectGigas.value;
+
+    // Atualiza o href do botão com o link correto
+    if (checkoutLinks[modelo] && checkoutLinks[modelo][gigasSelecionado]) {
+        checkoutLink.href = checkoutLinks[modelo][gigasSelecionado];
+    }
+}
+
+// Adicionando eventos de mudança para os modelos
+document.getElementById("gigas-iphone-12").addEventListener("change", () => atualizarCheckout("iphone-12"));
+document.getElementById("gigas-iphone-13").addEventListener("change", () => atualizarCheckout("iphone-13"));
+
+
+
 </script>
 
 
