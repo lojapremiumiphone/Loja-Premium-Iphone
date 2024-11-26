@@ -950,4 +950,49 @@ body {
     margin: 20px auto;
 }
 
+@media (max-width: 528px) {
+    .features {
+        display: flex;
+        flex-direction: column; /* Empilha os elementos */
+        gap: 15px; /* Espaçamento entre os cards */
+        padding: 10px; /* Reduz o espaçamento lateral */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .feature {
+        max-width: 90%; /* Reduz a largura para caber melhor */
+        padding: 15px; /* Ajusta o espaçamento interno */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        border-radius: 10px; /* Arredonda os cantos */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    header.hero {
+        padding: 20px; /* Reduz o espaçamento interno */
+    }
+
+    header.hero h1 {
+        font-size: 1.8rem; /* Ajusta o tamanho do título */
+        line-height: 1.4; /* Melhora o espaçamento entre linhas */
+        margin-bottom: 15px;
+    }
+
+    .hero .hero-subtitle {
+        font-size: 1rem; /* Ajusta o tamanho do texto */
+        margin-bottom: 20px; /* Reduz o espaço abaixo do subtítulo */
+    }
+
+    .hero .btn {
+        font-size: 1rem; /* Ajusta o tamanho do botão */
+        padding: 12px 20px; /* Ajusta o espaçamento interno */
+        width: 90%; /* Garante que o botão não ultrapasse as bordas */
+        margin: 0 auto; /* Centraliza o botão */
+    }
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Previne o conteúdo de ultrapassar as bordas */
+}
+
 
