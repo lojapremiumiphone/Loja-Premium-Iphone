@@ -247,36 +247,41 @@
                 
             </div>
     
-            <!-- Produto 4: iPhone 15 -->
-            <div class="produto">
-                <!-- Badge -->
-                <span class="badge badge-destaque">Destaque</span>
-    
-                <img src="imagens/iphone-15-amarelo.jpg" alt="iPhone 15" id="imagem-iphone-15">
-                <h3>iPhone 15</h3>
-                <p>LACRADO</p>
-                <p class="preco" id="preco-iphone-15">R$ 2.200,99</p>
-    
-                <!-- Opções de Cor -->
-                <label for="cor-iphone-15">Cor:</label>
-                <select id="cor-iphone-15" name="cor" onchange="atualizarImagem('iphone-15')">
-                    <option value="amarelo">Amarelo</option>
-                    <option value="azul">Azul</option>
-                    <option value="preto">Preto</option>
-                    <option value="rosa">Rosa</option>
-                    <option value="verde">Verde</option>
-                </select>
-    
-                <!-- Opções de Gigas -->
-                <label for="gigas-iphone-15">Armazenamento:</label>
-                <select id="gigas-iphone-15" name="gigas" onchange="atualizarPreco('iphone-15'); atualizarLinkCheckout('iphone-15')">
-                    <option value="128gb">128GB</option>
-                    <option value="256gb">256GB</option>
-                    <option value="512gb">512GB</option>
-                </select>
-    
-                <a href="https://go.perfectpay.com.br/PPU38CP9L4R" class="btn btn-secondary" id="link-checkout-iphone-15">Comprar Agora</a>
-            </div>
+<!-- Produto 4: iPhone 15 -->
+<div class="produto">
+    <!-- Badge -->
+    <span class="badge badge-destaque">Destaque</span>
+
+    <!-- Imagem do Produto -->
+    <img src="imagens/iphone-15-amarelo.jpg" alt="iPhone 15" id="imagem-iphone-15">
+
+    <!-- Detalhes do Produto -->
+    <h3>iPhone 15</h3>
+    <p>LACRADO</p>
+    <p class="preco" id="preco-iphone-15">R$ 2.200,99</p>
+
+    <!-- Seletor de Cor -->
+    <label for="cor-iphone-15">Cor:</label>
+    <select id="cor-iphone-15" name="cor" onchange="atualizarImagem('iphone-15')">
+        <option value="amarelo">Amarelo</option>
+        <option value="azul">Azul</option>
+        <option value="preto">Preto</option>
+        <option value="rosa">Rosa</option>
+        <option value="verde">Verde</option>
+    </select>
+
+    <!-- Seletor de Gigas -->
+    <label for="gigas-iphone-15">Armazenamento:</label>
+    <select id="gigas-iphone-15" name="gigas" onchange="atualizarPreco('iphone-15'); atualizarLinkCheckout('iphone-15')">
+        <option value="128gb">128GB</option>
+        <option value="256gb">256GB</option>
+        <option value="512gb">512GB</option>
+    </select>
+
+    <!-- Botão de Checkout -->
+    <a href="https://go.perfectpay.com.br/PPU38CP9L4R" class="btn btn-secondary" id="link-checkout-iphone-15">Comprar Agora</a>
+</div>
+
         </div>
     </section>
     
@@ -445,8 +450,8 @@ document.querySelector('.prev').addEventListener('click', prevDepoimento);
         });
     });
 
- // Links de checkout para cada modelo e armazenamento
- const checkoutLinks = {
+// Links de checkout para cada modelo e armazenamento
+const checkoutLinks = {
     "iphone-12": {
         "128gb": "https://go.perfectpay.com.br/PPU38CP9JKC",
         "256gb": "https://go.perfectpay.com.br/PPU38CP9JJ2"
@@ -465,10 +470,7 @@ document.querySelector('.prev').addEventListener('click', prevDepoimento);
         "256gb": "https://go.perfectpay.com.br/PPU38CP9L5F", // Link para 256GB
         "512gb": "https://go.perfectpay.com.br/PPU38CP9L5H"  // Link para 512GB
     }
-
-    
 };
-
 
 // Função para atualizar o link de checkout com base na seleção de gigas
 function atualizarCheckout(modelo) {
@@ -482,9 +484,13 @@ function atualizarCheckout(modelo) {
     }
 }
 
-// Adicionando eventos de mudança para os modelos
-document.getElementById("gigas-iphone-12").addEventListener("change", () => atualizarCheckout("iphone-12"));
-document.getElementById("gigas-iphone-13").addEventListener("change", () => atualizarCheckout("iphone-13"));
+// Adicionando eventos de mudança para todos os modelos
+["iphone-12", "iphone-13", "iphone-14pro", "iphone-15"].forEach(modelo => {
+    const selectGigas = document.getElementById(`gigas-${modelo}`);
+    if (selectGigas) {
+        selectGigas.addEventListener("change", () => atualizarCheckout(modelo));
+    }
+});
 
 
 
