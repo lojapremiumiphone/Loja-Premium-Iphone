@@ -234,14 +234,17 @@
                     <option value="prata">Prata</option>
                 </select>
     
-                <!-- Opções de Gigas -->
-                <label for="gigas-iphone-14pro">Armazenamento:</label>
-                <select id="gigas-iphone-14pro" name="gigas" onchange="atualizarPreco('iphone-14pro')">
-                    <option value="512gb">512GB</option>
-                    <option value="1tb">1TB</option>
-                </select>
+                 <!-- Opções de Armazenamento -->
+    <label for="gigas-iphone-14pro">Armazenamento:</label>
+    <select id="gigas-iphone-14pro" name="gigas" onchange="atualizarCheckout('iphone-14pro'); atualizarPreco('iphone-14pro')">
+        <option value="512gb">512GB</option>
+        <option value="1tb">1TB</option>
+    </select>
+
+    <!-- Botão de Checkout -->
+    <a href="https://go.perfectpay.com.br/PPU38CP9L2O" class="btn btn-secondary" id="link-checkout-iphone-14pro">Comprar Agora</a>
     
-                <a href="LINK_DO_CHECKOUT" class="btn btn-secondary">Comprar Agora</a>
+                
             </div>
     
             <!-- Produto 4: iPhone 15 -->
@@ -266,13 +269,13 @@
     
                 <!-- Opções de Gigas -->
                 <label for="gigas-iphone-15">Armazenamento:</label>
-                <select id="gigas-iphone-15" name="gigas" onchange="atualizarPreco('iphone-15')">
+                <select id="gigas-iphone-15" name="gigas" onchange="atualizarPreco('iphone-15'); atualizarLinkCheckout('iphone-15')">
                     <option value="128gb">128GB</option>
                     <option value="256gb">256GB</option>
                     <option value="512gb">512GB</option>
                 </select>
     
-                <a href="LINK_DO_CHECKOUT" class="btn btn-secondary">Comprar Agora</a>
+                <a href="https://go.perfectpay.com.br/PPU38CP9L4R" class="btn btn-secondary" id="link-checkout-iphone-15">Comprar Agora</a>
             </div>
         </div>
     </section>
@@ -443,7 +446,7 @@ document.querySelector('.prev').addEventListener('click', prevDepoimento);
     });
 
  // Links de checkout para cada modelo e armazenamento
-const checkoutLinks = {
+ const checkoutLinks = {
     "iphone-12": {
         "128gb": "https://go.perfectpay.com.br/PPU38CP9JKC",
         "256gb": "https://go.perfectpay.com.br/PPU38CP9JJ2"
@@ -452,8 +455,20 @@ const checkoutLinks = {
         "128gb": "https://go.perfectpay.com.br/PPU38CP9JOD",
         "256gb": "https://go.perfectpay.com.br/PPU38CP9JOM",
         "512gb": "https://go.perfectpay.com.br/PPU38CP9JRG"
+    },
+    "iphone-14pro": {
+        "512gb": "https://go.perfectpay.com.br/PPU38CP9L2O", // Link para 512GB
+        "1tb": "https://go.perfectpay.com.br/PPU38CP9L31"   // Link para 1TB
+    },
+    "iphone-15": {
+        "128gb": "https://go.perfectpay.com.br/PPU38CP9L4R", // Link para 128GB
+        "256gb": "https://go.perfectpay.com.br/PPU38CP9L5F", // Link para 256GB
+        "512gb": "https://go.perfectpay.com.br/PPU38CP9L5H"  // Link para 512GB
     }
+
+    
 };
+
 
 // Função para atualizar o link de checkout com base na seleção de gigas
 function atualizarCheckout(modelo) {
